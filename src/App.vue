@@ -1,5 +1,5 @@
 <script>
-import HeaderLogo from './components/HeaderLogo.vue';
+import HeaderLogo from './components/view/HeaderLogo.vue';
 export default{
   components: {
     HeaderLogo

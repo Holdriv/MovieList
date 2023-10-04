@@ -1,29 +1,30 @@
 import { createWebHistory, createRouter } from "vue-router";
-import HelloWorld from "../components/HelloWorld.vue";
-import About from "../components/PageSecond.vue";
-import ErrorPage from "../components/ErrorPage.vue";
-import ContactPage from "../components/ContactPage.vue"
-import MovieDetail from "../components/MovieDetail.vue"
+import MainPage from "../components/view/MainPage.vue";
+import ContactPage from "../components/view/ContactPage.vue";
+import MovieItem from "../components/movie/MovieItem.vue";
+import SeriesList from "../components/movie/SeriesList.vue";
+import SearchPage from "../components/view/SearchPage.vue"
 
 const routes = [
   { 
     path: "/", 
-    component: HelloWorld },
-  { 
-    path: "/about", 
-    component: About },
-  {
-    path: "/*",
-    component: ErrorPage,
-  },
+    component: MainPage },
   {
     path: "/contact",
     component: ContactPage
   },
   {
-    path: '/movie/:id',
-    component: MovieDetail
-  }
+    path: '/:id',
+    component: MovieItem
+  },
+  {
+    path: '/series',
+    component: SeriesList
+  },
+  {
+    path: '/search',
+    component: SearchPage
+  },
     
 ];
 

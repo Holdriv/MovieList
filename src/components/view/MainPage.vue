@@ -1,17 +1,7 @@
 <template>
   <div class="counter">
-    <div class="links">
-      <router-link to="/about">
-        Second page
-      </router-link>
-      <router-link to="/contact">
-        contact
-      </router-link>
-    </div>
-
     <section>
       <div>
-        <span>MAIN TAG {{ length }}</span>
         <MovieList :items="items"/>
       </div>
     </section>
@@ -23,20 +13,17 @@
 <script>
 import store from '@/store/store'
 import { mapGetters } from 'vuex'
-import MovieList from './MovieList.vue'
+import MovieList from '../movie/MovieList.vue'
 
 export default{
     data() {
+
     },
     computed: {
         length() {
-            return store.state.count;
+            return store.state.movieItem;
         },
         ...mapGetters(['items'])
-    },
-    mounted() {
-        this.$store.dispatch("fetchMovie");
-        console.log(this.items.length);
     },
     components: { MovieList }
 }
@@ -53,3 +40,5 @@ span{
   color: aliceblue;
 }
 </style>
+/
+/
