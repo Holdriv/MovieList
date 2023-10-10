@@ -16,15 +16,13 @@ export default {
 
   }
 </script>    
-<style>
+<style scoped>
 .movies-list {
     display: flex;
     flex-wrap: wrap;
     margin: 0px 8px;
 }
 .movie {
-    max-width: 25%;
-    flex: 1 1 50%;
     padding: 20px 10px;
 }
 h3{
@@ -36,5 +34,10 @@ img {
       width: 100%;
       height: 40vh;
       object-fit: cover;
-    }
+}
+@media screen and (max-width: 1024px) {
+  .movie{
+    width: 50%;
+  }
+}
 </style>

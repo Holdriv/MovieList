@@ -19,9 +19,11 @@ export default{
 
 <style>
 .app{
-  padding: 4dvh 5vw;
+  padding: 4vh 0vw 4vh 9vw;
   background-color: #212121;
   height: 100%;
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
+
 </style>
