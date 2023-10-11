@@ -39,6 +39,7 @@ img{
   height: 20%;
 }
 a{
+  
   transition: 0.4s;
 }
 a:hover {

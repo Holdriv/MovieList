@@ -45,7 +45,7 @@ export default{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 3vw;
+  padding-bottom: 1vw;
 }
 .input-group{
     padding-top: 20px;

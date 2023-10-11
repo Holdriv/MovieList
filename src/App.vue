@@ -19,7 +19,7 @@ export default{
 
 <style>
 .app{
-  padding: 4vh 0vw 4vh 9vw;
+  padding: 4vh 0vw 4vh 4vw;
   background-color: #212121;
   height: 100%;
   width: 100%;

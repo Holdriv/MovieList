@@ -82,12 +82,34 @@ img{
 .movie-char{
     display: flex;
     flex-direction: column;
+    margin-left: 2vw;
 }
 span{
-    font-size: 40px;
+    font-size: 35px;
 }
-.description{
-    font-size: 40px;
+@media screen and (max-width: 1024px){
+    span{
+    font-size: 28px;
+}
+}
+@media screen and (max-width: 768px){
+    span{
+    font-size: 20px;
+}
+.movie-item{
+    display: flex;
+    flex-direction: column;
+}
+img{
+    width: fit-content;
+    height: fit-content;
+    height: 50vh;
+    width: 50vw;
+}
+.movie-poster{
+    display: flex;
+    justify-content: center;
+}
 }
 
 </style>
