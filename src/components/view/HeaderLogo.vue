@@ -34,7 +34,7 @@ export default{
   methods: {
     searchMovie() {
       router.push('search')
-      this.$store.dispatch('fetchMovieSearch', this.search)
+      this.$store.dispatch('findMovieSearch', this.search)
       this.search=""
     },
   },

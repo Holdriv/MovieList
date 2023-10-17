@@ -22,7 +22,7 @@
 
     },
     mounted() {
-        this.$store.dispatch("fetchSeries");
+        this.$store.dispatch("findSeries");
         console.log(this.items.length);
     },
     }

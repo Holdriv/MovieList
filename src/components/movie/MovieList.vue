@@ -11,7 +11,7 @@ export default {
   },
   props: ['items'],
   mounted() {
-        this.$store.dispatch("fetchMovie");
+        this.$store.dispatch("findMovie");
     }
 
   }

@@ -1,19 +1,15 @@
 import axios from "axios";
+export const options = {
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmN2E0NzMyZDQ0OTZhOTI1MTBkMTc0YTU3MzgxZjZmYiIsInN1YiI6IjY1MGMzYTQ0YjViYzIxMDEyY2M5ZGVkOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hi--QEMrX0IgxtnENvirduWJt0CwBM7s0JfG5K44lEI'
+  }
+};
 const movieList={
     actions: {
-        async fetchSeries({commit}){
-          const options = {
-              method: 'GET',
-              url: 'https://api.themoviedb.org/3/tv/top_rated',
-              params: {language: 'en-US', page: '1'},
-              headers: {
-                accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmN2E0NzMyZDQ0OTZhOTI1MTBkMTc0YTU3MzgxZjZmYiIsInN1YiI6IjY1MGMzYTQ0YjViYzIxMDEyY2M5ZGVkOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hi--QEMrX0IgxtnENvirduWJt0CwBM7s0JfG5K44lEI'
-              }
-            };
-            
+        async findSeries({commit}){
             axios
-              .request(options)
+              .get(`https://api.themoviedb.org/3/tv/top_rated`, options)
               .then(function (response) {
                 console.log(response.data);
                 commit("SET_ITEMS", response.data)
@@ -22,19 +18,10 @@ const movieList={
                 console.error(error);
               });
         },
-        async fetchSeriesItem({commit}, id){
-          const options = {
-            method: 'GET',
-            url: `https://api.themoviedb.org/3/tv/${id}`,
-            params: {language: 'en-US'},
-            headers: {
-              accept: 'application/json',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmN2E0NzMyZDQ0OTZhOTI1MTBkMTc0YTU3MzgxZjZmYiIsInN1YiI6IjY1MGMzYTQ0YjViYzIxMDEyY2M5ZGVkOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hi--QEMrX0IgxtnENvirduWJt0CwBM7s0JfG5K44lEI'
-            }
-          };
-          
+        async findSeriesItem({commit}, id){
+
           axios
-            .request(options)
+            .get(`https://api.themoviedb.org/3/tv/${id}`, options)
             .then(function (response) {
               console.log(response.data);
               commit("SET_MOVIEITEM", response.data)

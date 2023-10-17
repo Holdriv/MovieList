@@ -1,4 +1,5 @@
 import axios from "axios";
+import { options } from "./series";
 const movieList={
     state(){
         return{
@@ -14,19 +15,9 @@ const movieList={
         movieItem: state => state.movieItem
     },
     actions: {
-      async fetchMovieItem({commit}, id){
-          const options = {
-              method: 'GET',
-              url: `https://api.themoviedb.org/3/movie/${id}`,
-              params: {language: 'en-US'},
-              headers: {
-                accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmN2E0NzMyZDQ0OTZhOTI1MTBkMTc0YTU3MzgxZjZmYiIsInN1YiI6IjY1MGMzYTQ0YjViYzIxMDEyY2M5ZGVkOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hi--QEMrX0IgxtnENvirduWJt0CwBM7s0JfG5K44lEI'
-              }
-            };
-            
+      async findMovieItem({commit}, id){
             axios
-              .request(options)
+              .get(`https://api.themoviedb.org/3/movie/${id}`, options)
               .then(function (response) {
                 console.log(response.data);
                 commit("SET_MOVIEITEM", response.data)
@@ -35,9 +26,8 @@ const movieList={
                 console.error(error);
               });
       },
-        async fetchMovieSearch({commit}, name){
+        async findMovieSearch({commit}, name){
           const options = {
-            method: 'GET',
             url: 'https://api.themoviedb.org/3/search/movie',
             params: {query: `${name}`, include_adult: 'false', language: 'en-US', page: '1'},
             headers: {
@@ -47,7 +37,7 @@ const movieList={
           };
           
           axios
-            .request(options)
+            .get('https://api.themoviedb.org/3/search/movie', options)
             .then(function (response) {
               console.log(response.data);
               commit("SET_ITEMS", response.data)

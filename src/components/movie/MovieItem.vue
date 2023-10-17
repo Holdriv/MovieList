@@ -40,11 +40,11 @@ export default{
     },
     beforeMount() {
         
-        this.$store.dispatch("fetchMovieItem", this.$route.params.id);
+        this.$store.dispatch("findMovieItem", this.$route.params.id);
         
     },
     mounted(){
-        this.$store.dispatch("fetchSeriesItem", this.$route.params.id);
+        this.$store.dispatch("findSeriesItem", this.$route.params.id);
     }
 }
 </script>
